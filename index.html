@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Takani Spa — Masajes y faciales con productos naturales en Cancún</title>
+<meta name="description" content="Refugio de serenidad para el alma. Spa boutique en Plaza Malecón Américas, Cancún. Masajes, faciales y rituales con productos 100% naturales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #526343;
+    --sage-dark: #3C4A31;
+    --sage-deeper: #2A3422;
+    --sage-light: #677C54;
+    --leaf: #8FAE1B;
+    --gold: #C8A96A;
+    --gold-deep: #A98843;
+    --bg: #FCFBF8;
+    --bg-alt: #EFEDE4;
+    --bg-soft: #F5F3EC;
+    --ink: #2C2C28;
+    --muted: #6E7268;
+    --line: rgba(82,99,67,.14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.7; overflow-x: hidden; font-weight: 400; }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; color: var(--sage-dark); line-height: 1.08; letter-spacing: -.01em; }
+  h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 500; }
+  h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+  h3 { font-size: 1.5rem; font-weight: 600; }
+  p { font-size: 1.05rem; }
+  a { color: var(--sage); text-decoration: none; }
+  .eyebrow {
+    font-family: 'Inter', sans-serif; font-weight: 500;
+    letter-spacing: .32em; text-transform: uppercase;
+    font-size: .68rem; color: var(--gold-deep);
+  }
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 1.6rem; }
+  .container-narrow { max-width: 860px; margin: 0 auto; padding: 0 1.6rem; }
+
+  /* Navigation */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(252,251,248,0.92); backdrop-filter: blur(12px);
+    padding: 1rem 0; border-bottom: 1px solid var(--line);
+  }
+  nav .row { display: flex; justify-content: space-between; align-items: center; }
+  nav .brand { display: flex; align-items: center; gap: .7rem; }
+  nav .brand img { height: 42px; width: auto; }
+  nav .brand .wordmark { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.5rem; color: var(--sage-dark); letter-spacing: .04em; }
+  nav .links { display: flex; align-items: center; gap: 2rem; }
+  nav .links a { color: var(--sage-dark); font-family: 'Inter'; font-weight: 500; font-size: .92rem; }
+  nav .links a:hover { color: var(--gold-deep); }
+  nav .cta { background: var(--sage); color: #fff !important; padding: .6rem 1.4rem; border-radius: 999px; font-weight: 500; }
+  nav .cta:hover { background: var(--sage-dark); }
+
+  /* Hero */
+  .hero {
+    position: relative; min-height: 90vh;
+    background: linear-gradient(180deg, rgba(42,52,34,.32) 0%, rgba(42,52,34,.72) 100%),
+                url('https://www.takanispa.com/wp-content/uploads/2026/05/PAGINA-WEB-1024x683.png') center/cover;
+    display: flex; align-items: flex-end; color: #fff; padding: 6rem 0 4.5rem;
+  }
+  .hero h1 { color: #FCFBF8; max-width: 880px; }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero .eyebrow { color: rgba(252,251,248,.9); margin-bottom: 1.3rem; }
+  .hero p.lede { font-family: 'Cormorant Garamond'; font-style: italic; font-size: clamp(1.3rem,2.5vw,1.6rem); max-width: 580px; margin: 1.6rem 0 2.4rem; opacity: .95; line-height: 1.5; color: #FCFBF8; }
+  .hero .ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: .95rem 2.2rem; border-radius: 999px;
+    text-decoration: none; font-weight: 500; font-size: .98rem;
+    transition: all .25s; font-family: 'Inter', sans-serif; letter-spacing: .02em;
+  }
+  .btn-primary { background: var(--gold); color: var(--sage-deeper) !important; }
+  .btn-primary:hover { background: var(--gold-deep); color: #fff !important; transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: #FCFBF8 !important; border: 1.5px solid rgba(252,251,248,.7); }
+  .btn-ghost:hover { background: #FCFBF8; color: var(--sage-dark) !important; }
+
+  /* Stats strip */
+  .strip {
+    background: var(--sage-deeper); color: var(--bg-soft);
+    padding: 2.4rem 0; font-family: 'Inter';
+  }
+  .strip .row { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; text-align: center; }
+  .strip .stat .num { font-family: 'Cormorant Garamond'; font-size: 2.8rem; font-weight: 600; color: var(--gold); display: block; line-height: 1; }
+  .strip .stat .label { font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; opacity: .8; margin-top: .5rem; }
+
+  section { padding: 6rem 0; }
+  section.tight { padding: 3.5rem 0; }
+
+  .section-head { text-align: center; max-width: 660px; margin: 0 auto 3.5rem; }
+  .section-head h2 { margin: .8rem 0 1rem; }
+  .section-head p { color: var(--muted); font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.25rem; }
+
+  /* Gallery (portfolio-first) */
+  .gallery { background: var(--bg); }
+  .gallery .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; }
+  .gallery .grid figure { position: relative; overflow: hidden; border-radius: 3px; }
+  .gallery .grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+  .gallery .grid figure:hover img { transform: scale(1.04); }
+  .gallery .grid figure:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 3; min-height: 480px; }
+  .gallery .grid figure:nth-child(2) { min-height: 232px; }
+  .gallery .grid figure:nth-child(3) { min-height: 232px; }
+  .gallery .grid figcaption {
+    position: absolute; left: 0; bottom: 0; right: 0;
+    padding: 1.5rem 1.4rem .9rem; color: #fff;
+    background: linear-gradient(transparent, rgba(42,52,34,.78));
+    font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.2rem;
+  }
+
+  /* Services */
+  .services { background: var(--bg-soft); }
+  .services .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
+  .services .card {
+    background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+    padding: 2rem 1.8rem; transition: all .25s;
+  }
+  .services .card:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(82,99,67,.12); border-color: var(--gold); }
+  .services .card .tag { font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; }
+  .services .card h3 { margin: .7rem 0 .6rem; font-size: 1.45rem; }
+  .services .card p { color: var(--muted); font-size: .98rem; margin-bottom: 1.1rem; }
+  .services .card .price { font-family: 'Cormorant Garamond'; font-size: 1.4rem; font-weight: 600; color: var(--sage); }
+  .services .note { text-align: center; margin-top: 2.6rem; font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.15rem; color: var(--muted); }
+
+  /* About / ritual band */
+  .ritual {
+    background: var(--sage); color: var(--bg-soft);
+  }
+  .ritual .split { display: grid; grid-template-columns: 6fr 5fr; gap: 4.5rem; align-items: center; }
+  .ritual .eyebrow { color: var(--gold); }
+  .ritual h2 { color: #FCFBF8; margin: .8rem 0 1.4rem; }
+  .ritual p { color: rgba(252,251,248,.88); font-size: 1.08rem; margin-bottom: 1.1rem; }
+  .ritual p.lead { font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.5rem; color: #FCFBF8; line-height: 1.45; }
+  .ritual .benefits { list-style: none; margin-top: 1.6rem; display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1.4rem; }
+  .ritual .benefits li { font-size: .96rem; color: rgba(252,251,248,.9); padding-left: 1.4rem; position: relative; }
+  .ritual .benefits li:before { content: "•"; position: absolute; left: 0; color: var(--gold); font-size: 1.1rem; }
+  .ritual img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; border-radius: 4px; }
+
+  /* Trust / rating */
+  .trust { text-align: center; }
+  .trust .stars { color: var(--gold); font-size: 1.4rem; letter-spacing: .3em; margin-bottom: .9rem; }
+  .trust h2 { margin-bottom: 1rem; }
+  .trust p { color: var(--muted); max-width: 620px; margin: 0 auto; font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.3rem; }
+  .trust .source { display: inline-block; margin-top: 1.6rem; font-family: 'Inter'; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; }
+
+  /* Booking / contact */
+  .booking {
+    position: relative; padding: 0;
+    background: linear-gradient(rgba(42,52,34,.62), rgba(42,52,34,.82)),
+                url('https://www.takanispa.com/wp-content/uploads/2026/05/about-me-1024x683.png') center/cover;
+    color: #FCFBF8; display: flex; align-items: center; min-height: 70vh;
+  }
+  .booking .container-narrow { padding-top: 5.5rem; padding-bottom: 5.5rem; }
+  .booking .eyebrow { color: var(--gold); margin-bottom: 1rem; }
+  .booking h2 { color: #FCFBF8; margin-bottom: 1.2rem; }
+  .booking p.lede { font-family: 'Cormorant Garamond'; font-style: italic; font-size: 1.3rem; max-width: 560px; opacity: .94; }
+  .booking .info {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+    margin: 2.6rem 0; padding: 2rem 0; border-top: 1px solid rgba(252,251,248,.25); border-bottom: 1px solid rgba(252,251,248,.25);
+  }
+  .booking .info .label { font-size: .66rem; letter-spacing: .22em; text-transform: uppercase; opacity: .7; margin-bottom: .5rem; }
+  .booking .info .value { font-weight: 400; color: #FCFBF8; font-size: 1rem; line-height: 1.6; }
+  .booking .info .value a { color: var(--gold); }
+
+  /* WhatsApp float */
+  .wa-float {
+    position: fixed; right: 20px; bottom: 20px; z-index: 60;
+    background: var(--sage); color: #fff !important; padding: .85rem 1.3rem;
+    border-radius: 999px; font-family: 'Inter'; font-weight: 600; font-size: .9rem;
+    box-shadow: 0 8px 24px rgba(42,52,34,.3); transition: all .2s;
+  }
+  .wa-float:hover { background: var(--sage-dark); transform: translateY(-2px); }
+
+  /* Footer */
+  footer { background: var(--sage-deeper); color: rgba(245,243,236,.6); padding: 2.8rem 0; text-align: center; font-family: 'Inter'; font-size: .88rem; }
+  footer a { color: var(--gold); font-weight: 500; }
+  footer .map-link { display: inline-block; margin-bottom: 1.2rem; color: rgba(245,243,236,.75); font-size: .85rem; }
+
+  @media (max-width: 900px) {
+    .ritual .split { grid-template-columns: 1fr; gap: 2.5rem; }
+    .gallery .grid { grid-template-columns: 1fr 1fr; }
+    .gallery .grid figure:nth-child(1) { grid-column: 1 / 3; min-height: 320px; }
+    .booking .info { grid-template-columns: 1fr; gap: 1.4rem; }
+    nav .links a:not(.cta) { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container row">
+    <div class="brand">
+      <img src="https://www.takanispa.com/wp-content/uploads/2026/05/logo.png" alt="Takani Spa">
+    </div>
+    <div class="links">
+      <a href="#galeria">Galería</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#ritual">El ritual</a>
+      <a href="#contacto">Contacto</a>
+      <a href="tel:+529988844679" class="cta">Reservar</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow">Spa boutique · Cancún</span>
+    <h1>Un refugio de <em>serenidad</em><br>para el alma.</h1>
+    <p class="lede">Masajes, faciales y rituales con productos 100% naturales, seleccionados cuidadosamente para tu piel. A veces no necesitas escapar. Solo necesitas volver a ti.</p>
+    <div class="ctas">
+      <a href="tel:+529988844679" class="btn btn-primary">Reservar tu sesión</a>
+      <a href="#servicios" class="btn btn-ghost">Ver tratamientos</a>
+    </div>
+  </div>
+</header>
+
+<section class="strip tight">
+  <div class="container row">
+    <div class="stat"><span class="num">4.9</span><div class="label">Google · 889 reseñas</div></div>
+    <div class="stat"><span class="num">100%</span><div class="label">Productos naturales</div></div>
+    <div class="stat"><span class="num">11—21h</span><div class="label">Abierto todos los días</div></div>
+    <div class="stat"><span class="num">★★★★★</span><div class="label">Spa boutique</div></div>
+  </div>
+</section>
+
+<section id="galeria" class="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">El espacio</span>
+      <h2>Cuidarte es un ritual</h2>
+      <p>Es presencia. Es intención. Cada rincón de Takani está pensado para que sueltes el ruido y vuelvas a tu cuerpo.</p>
+    </div>
+    <div class="grid">
+      <figure>
+        <img src="https://www.takanispa.com/wp-content/uploads/2026/05/PAGINA-WEB-1024x683.png" alt="Ambiente de Takani Spa, refugio de serenidad en Cancún">
+        <figcaption>Takani es un santuario; un spa boutique donde la hospitalidad y el cuidado se vuelven uno.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://www.takanispa.com/wp-content/uploads/2026/05/about-me-1024x683.png" alt="Tratamientos con productos naturales en Takani Spa">
+      </figure>
+      <figure>
+        <img src="https://www.takanispa.com/wp-content/uploads/2026/05/our-servicios-1024x683.png" alt="Servicios de masaje y facial en Takani Spa">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" class="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nuestros tratamientos</span>
+      <h2>Masajes, faciales y rituales</h2>
+      <p>Todos hechos con productos naturales, elegidos cuidadosamente para tu piel y tu bienestar.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">Facial</span>
+        <h3>Facial Ayurveda</h3>
+        <p>Ritual facial de raíces ayurvédicas para equilibrar y nutrir la piel en profundidad.</p>
+        <div class="price">$1,800</div>
+      </div>
+      <div class="card">
+        <span class="tag">Facial</span>
+        <h3>Facial Detox</h3>
+        <p>Limpieza facial profesional que purifica, oxigena y devuelve luminosidad al rostro.</p>
+        <div class="price">$1,500</div>
+      </div>
+      <div class="card">
+        <span class="tag">Masaje</span>
+        <h3>Masaje con Piedras Calientes</h3>
+        <p>El calor de las piedras libera la tensión muscular y restaura el equilibrio energético.</p>
+        <div class="price">$1,980</div>
+      </div>
+      <div class="card">
+        <span class="tag">Masaje</span>
+        <h3>Masaje Holístico</h3>
+        <p>Una experiencia que honra la unión de mente, cuerpo y espíritu. Relajación total.</p>
+        <div class="price">desde $1,200</div>
+      </div>
+      <div class="card">
+        <span class="tag">Masaje</span>
+        <h3>Masaje de Tejido Profundo</h3>
+        <p>Técnica firme que libera tensiones acumuladas y mejora la movilidad del cuerpo.</p>
+        <div class="price">desde $1,300</div>
+      </div>
+      <div class="card">
+        <span class="tag">Masaje</span>
+        <h3>Masaje Clásico</h3>
+        <p>El reencuentro contigo mismo. Toques que equilibran la energía y sueltan el estrés del día.</p>
+        <div class="price">desde $980</div>
+      </div>
+      <div class="card">
+        <span class="tag">Ritual en pareja</span>
+        <h3>Ritual Amor en Pareja</h3>
+        <p>Una pausa compartida para reconectar. Cuidado, calma y presencia en compañía.</p>
+        <div class="price">$3,980</div>
+      </div>
+      <div class="card">
+        <span class="tag">Ritual</span>
+        <h3>Masaje Cráneo Facial</h3>
+        <p>Alivia la mente y libera la tensión de cabeza, cuello y rostro. Descanso profundo.</p>
+        <div class="price">desde $800</div>
+      </div>
+    </div>
+    <p class="note">Carta completa de masajes, faciales y rituales disponible en el spa y al reservar.</p>
+  </div>
+</section>
+
+<section id="ritual" class="ritual">
+  <div class="container">
+    <div class="split">
+      <div class="text">
+        <span class="eyebrow">El ritual Takani</span>
+        <h2>Más que un lujo,<br>una necesidad moderna</h2>
+        <p class="lead">"La relajación total existe… y además rejuvenece."</p>
+        <p>En un mundo donde todo se mueve rápido — trabajo, pendientes, familia, el celular que no deja de sonar — cuidar tu bienestar dejó de ser un capricho para convertirse en algo básico. El masaje se vuelve ese espacio íntimo donde respiras, sueltas y regresas a tu cuerpo.</p>
+        <ul class="benefits">
+          <li>Reducción del estrés y la ansiedad</li>
+          <li>Mejora del sueño</li>
+          <li>Conexión cuerpo-mente</li>
+          <li>Equilibrio energético</li>
+          <li>Liberación de tensiones musculares</li>
+          <li>Mejora de la circulación</li>
+          <li>Mayor flexibilidad y movilidad</li>
+          <li>Fortalece tu sistema inmune</li>
+        </ul>
+      </div>
+      <img src="https://www.takanispa.com/wp-content/uploads/2026/05/about-me-1024x683.png" alt="Experiencia de bienestar en Takani Spa">
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="container-narrow">
+    <div class="stars">★ ★ ★ ★ ★</div>
+    <h2>Lo que sienten quienes nos visitan</h2>
+    <p>"Masaje, mascarillas y mil historias por contar." Un refugio donde el cuidado se vuelve presencia, intención y calma.</p>
+    <span class="source">Calificación 4.9 en Google · 889 reseñas</span>
+  </div>
+</section>
+
+<section class="booking" id="contacto">
+  <div class="container-narrow">
+    <span class="eyebrow">Reserva tu visita</span>
+    <h2>Te esperamos en Takani</h2>
+    <p class="lede">Agenda tu masaje, facial o ritual y regálate una pausa. Abierto todos los días de 11:00 a 21:00.</p>
+    <div class="info">
+      <div>
+        <div class="label">Dónde estamos</div>
+        <div class="value">Plaza Malecón Américas<br>2do. piso, Local 140<br>(a un lado de Chapur)<br>Cancún, Quintana Roo</div>
+      </div>
+      <div>
+        <div class="label">Reservaciones</div>
+        <div class="value"><a href="tel:+529988844679">998 884 4679</a><br><a href="mailto:info@takanispa.com">info@takanispa.com</a><br>Instagram: @takaniskincare</div>
+      </div>
+      <div>
+        <div class="label">Horario</div>
+        <div class="value">Todos los días<br>11:00 — 21:00</div>
+      </div>
+    </div>
+    <a class="btn btn-primary" href="tel:+529988844679">Llamar para reservar</a>
+  </div>
+</section>
+
+<a class="wa-float" href="https://wa.me/529988844679" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+
+<footer>
+  <div class="container">
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Takani+Spa+Plaza+Malecon+Americas+Cancun" target="_blank" rel="noopener">Ver ubicación en Google Maps &rarr;</a>
+    <p>Preview por <a href="https://acidmkt.com">ACID MKT</a> · acidmkt.com</p>
+  </div>
+</footer>
+
+</body>
+</html>
